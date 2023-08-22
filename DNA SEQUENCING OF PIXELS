@@ -1,0 +1,116 @@
+#Encryption Code:
+from PIL import Image 
+import math  
+main_image = Image.open("img\\23DXqetVhecoWfY_1689897739.webp") #<------ location to put an image in the directory as given in the code with same name as the folder (make sure this step is done carefully or the program will not run at the very beginning ).
+input_image1 = Image.open("") #<------ location to put an image in the directory as given in the code with same name as the folder (make sure this step is done carefully or the program will not run at the very beginning ).
+pixel_map = main_image.load()
+width, height = main_image.size
+#print(width,height)
+c=[]
+for i in range(width): 
+    for j in range(height): 
+        r, g, b= main_image.getpixel((i, j))
+        r1,g1,b1=input_image1.getpixel((i,j))
+        c1=r^r1
+        c2=g^g1
+        c3=b^b1
+        c.append(c1)
+        c.append(c2)
+        c.append(c3)
+print(c[:100000])
+
+d=[]
+for a in c:
+    b=bin(a).replace('0b', '')
+    while(len(b)<8):
+        b='0'+b
+    d.append(b)
+st=[]
+for i in d:
+    for j in range(0,8,2):
+        tmp=i[j:j+2]
+        if(tmp=='00'):
+            st.append('A')
+        elif(tmp=='11'):
+            st.append('T')
+        elif(tmp=='01'):
+            st.append('C')
+        elif(tmp=='10'):
+            st.append('G')
+print(st[:100])
+
+c=[]
+d=[]
+tmp=[]
+a=0
+for i in range(0,len(st),4):
+   c.append(st[i+1])
+   c.append(st[i+2])
+   d.append(st[i])
+   d.append(st[i+3])
+   if(c[a]=="A" and c[a+1]=="A"):
+       tmp.append("0000")
+   elif(c[a]=="A" and c[a+1]=="C"):
+       tmp.append("0010")
+   elif(c[a]=="A" and c[a+1]=="T"):
+       tmp.append("0100")
+   elif(c[a]=="A" and c[a+1]=="G"):
+       tmp.append("0110")
+   elif(c[a]=="C" and c[a+1]=="A"):
+       tmp.append("1000")
+   elif(c[a]=="C" and c[a+1]=="C"):
+       tmp.append("1010")
+   elif(c[a]=="C" and c[a+1]=="T"):
+       tmp.append("1100")
+   elif(c[a]=="C" and c[a+1]=="G"):
+       tmp.append("1110")
+   elif(c[a]=="T" and c[a+1]=="A"):
+       tmp.append("1111")
+   elif(c[a]=="T" and c[a+1]=="C"):
+       tmp.append("1101")
+   elif(c[a]=="T" and c[a+1]=="T"):
+       tmp.append("1011")
+   elif(c[a]=="T" and c[a+1]=="G"):
+       tmp.append("1001")
+   elif(c[a]=="G" and c[a+1]=="A"):
+       tmp.append("0111")
+   elif(c[a]=="G" and c[a+1]=="C"):
+       tmp.append("0101")
+   elif(c[a]=="G" and c[a+1]=="T"):
+       tmp.append("0011")
+   elif(c[a]=="G" and c[a+1]=="G"):
+       tmp.append("0001")
+   c=[]
+   if(d[a]=="A" and d[a+1]=="A"):
+       tmp.append("0000")
+   elif(d[a]=="A" and d[a+1]=="C"):
+       tmp.append("0010")
+   elif(d[a]=="A" and d[a+1]=="T"):
+       tmp.append("0100")
+   elif(d[a]=="A" and d[a+1]=="G"):
+       tmp.append("0110")
+   elif(d[a]=="C" and d[a+1]=="A"):
+       tmp.append("1000")
+   elif(d[a]=="C" and d[a+1]=="C"):
+       tmp.append("1010")
+   elif(d[a]=="C" and d[a+1]=="T"):
+       tmp.append("1100")
+   elif(d[a]=="C" and d[a+1]=="G"):
+       tmp.append("1110")
+   elif(d[a]=="T" and d[a+1]=="A"):
+       tmp.append("1111")
+   elif(d[a]=="T" and d[a+1]=="C"):
+       tmp.append("1101")
+   elif(d[a]=="T" and d[a+1]=="T"):
+       tmp.append("1011")
+   elif(d[a]=="T" and d[a+1]=="G"):
+       tmp.append("1001")
+   elif(d[a]=="G" and d[a+1]=="A"):
+       tmp.append("0111")
+   elif(d[a]=="G" and d[a+1]=="C"):
+       tmp.append("0101")
+   elif(d[a]=="G" and d[a+1]=="T"):
+       tmp.append("0011")
+   elif(d[a]=="G" and d[a+1]=="G"):
+       tmp.append("0001")
+   d=[]
