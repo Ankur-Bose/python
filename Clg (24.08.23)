@@ -1,0 +1,38 @@
+Q1. //program to prrint each character in a string
+str='String is String'
+wrds=(' '.join(str))
+print(wrds.split())
+
+Q2. //count 
+sampleStr = "Missisippi"
+count = 0
+print("**** Iterate over string ****")
+for ele in sampleStr:
+    if(ele == 's'):
+        count=count+1
+print(count)
+
+Q3. //pallindrome worrd
+str = 'madam'
+words = str.split()
+reversed_word = ' '.join(reversed(words))
+
+if(str==reversed_word):
+    print("pallindrome word")
+else:
+    print("Not ")
+
+
+
+Q5. //reverse a string
+str = 'I am a boy'
+words = str.split()
+reversed_word = ' '.join(reversed(words))
+print(reversed_word)
+
+
+Q6. //initials
+str="State bank of India"
+n=str.split()
+initials = [str[0] for str in n]
+print(' '.join(initials).upper())
