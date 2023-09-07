@@ -1,0 +1,200 @@
+#lists can bee mutated 
+#tupple can't be mutated
+
+#list1 = ['physics', 'chem', 1997, 2000]
+#list2 = [1,2,3,4,5]
+#list3 = ["a","b","c","d"]
+#
+#print(list2)
+
+#save and delete list
+
+#del list2[3]
+#print(list2)
+
+#concatenate 2 list (keyword = extend)
+#list1.extend(list2)
+#print(list1)
+
+#store items using list
+#list = [x for x in range(5)]
+#print(list)
+
+#print i to j item without using loop
+#l1=[1,2,3,4]
+#print(l1[:3])
+
+#convert a tuple in list
+#l2=[10,20,30]
+#tuple(l2)
+
+#Ffindd max min andd len
+#l2 = [10,20,30]
+#max(l2)
+#min(l2)
+#len(l2)
+
+#create two lists. Append an item. Append a tupple of length two. Concaatenate 2 lists. Find index of an item. Insert 'six' at index 5.
+#Delete the last. Delete item with index 4. Reemove the item 'six'. Reverse the list and sort it. Print result of each step.
+
+l1=[1,2,3]
+l2=[11,12,13]
+l1.append(4)
+print(l1)
+l1.append(('5a','5b'))
+print(l1)
+print(l2)
+l1.index(1)
+l1.insert(3,'six')
+print(l1)
+l1.pop()
+print(l1)
+l1.pop(4)
+print(l1)
+l1.remove('six')
+print(l1)
+l1.reverse()
+print(l1)
+l1.sort()
+print(l1)
+
+my_list=['p','r','o','b','l','e','m']
+print('p'in my_list)
+print('a'in my_list)
+print('c'not in my_list)
+
+
+
+
+
+
+#Q2
+#input 10 values from user
+print("Enter 10 integers :")
+values = []     #a list off values
+for i in range(10):
+    newValue = int(input("Enter integer %d:"%(i+1)))
+    values=values+[newValue]
+#create histogram
+print("\nCreating a histogram from values :")
+print("%s %10s %10s"%("Element", "Value", "Histogrram"))
+for i in range(len(values)):
+    print("%7d %10d %s" % (i, values[i], "*" *values[i]))
+
+
+
+
+
+Q3
+playList = [] # list of fav players 
+for i in range(5):
+    playName = input("Player %d "%(i+1))
+    playList.append(playName)
+print("\nSubscript Value ")
+for i in range(len(playList)):
+    print("%9d %-25s"%(i+1,playList[i]))
+
+
+
+
+
+
+Q4
+x= input("Enter a string :")
+sorted_string = ''.join(sorted(x))
+print(sorted_string)
+x=list(x)
+y=list(set(x))
+print(y)
+c=[]
+for i in range(len(y)):
+    c.append(x.count(y[i]))
+    print((y[i], c[i]))
+
+
+
+
+
+
+
+
+Q5
+table1 = [[1,2,3],[4,5,6],[7,8,9]]
+print("Values in table1 by row are ")
+for row in table1:
+    for item in row:
+        print(item,end=" ")
+    print()
+
+
+
+
+
+
+
+Q6
+n1=int(input("Enter the number of elements for list 1: "))
+my_list1 = [input(f"Enter elements %d: "%(i+1))for i in range(n1)]
+print(my_list1)
+
+n2=int(input("Enter the number of elements for list 2: "))
+my_list2 = [input(f"Enter elements %d: "%(j+1))for j in range(n2)]
+print(my_list2)
+
+my_list1.sort()
+my_list2.sort()
+
+if(my_list1==my_list2):
+    print("Same")
+else:
+    print("not same")
+
+
+
+
+
+
+
+
+Q7
+x= input("Enter a string :")
+sorted_string = ''.join(sorted(x))
+print(sorted_string)
+x=list(x)
+y=list(set(x))
+print(y)
+c=[]
+for i in range(len(y)):
+    c.append(x.count(y[i]))
+    print((y[i], c[i]))
+
+
+
+
+
+
+
+
+Q8
+list=[]
+list.append(1)
+print("Push :",list)
+list.append(2)
+print("Push :",list)
+list.append(3)
+print("Push :",list)
+list.pop()
+print("Pop :",list)
+print("Peek :",list[-1])
+list.pop()
+print("Pop :",list)
+print("Peek :",list[-1])
+
+
+
+
+
+
+
+
+Q9. user defined queue(not done)
